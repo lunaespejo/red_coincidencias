@@ -1,0 +1,13 @@
+# Ignorar la base de datos local
+data/db_red/database.db
+
+# Archivos temporales / caché
+__pycache__/
+*.pyc
+
+# Carpetas ocultas de VSCode y sistema
+.vscode/
+.DS_Store
+
+# Archivos de sistema
+Thumbs.db
