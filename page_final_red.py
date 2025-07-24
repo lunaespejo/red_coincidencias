@@ -4,6 +4,19 @@ import sqlite3
 import base64
 import time
 import os  # Para manejar rutas dinámicas
+import gdown
+
+# 📥 Verificar si existe la base de datos localmente, si no, descargarla
+DB_PATH = "./data/db_red/database.db"
+DRIVE_FILE_ID = "1DW15Nmf4Ox7sa2hcEq9ysTkCUfUZDtNP"
+DOWNLOAD_URL = f"https://drive.google.com/uc?id={DRIVE_FILE_ID}&export=download"
+
+# Crear carpeta si no existe
+os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+
+if not os.path.exists(DB_PATH):
+    with st.spinner("📥 Descargando base de datos desde Google Drive..."):
+        gdown.download(DOWNLOAD_URL, DB_PATH, quiet=False)
 
 # Configuración inicial de la app
 st.set_page_config(page_title="ADMIN_PRO", layout="wide")
@@ -66,7 +79,6 @@ st.markdown("---")
 st.markdown("Ingresa un dato clave para buscar toda la red de coincidencias exactas entre usuarios.")
 
 # ⚙️ Variables base
-DB_PATH = "./data/db_red/database.db"
 TABLE_NAME = "contact_info"
 CAMPOS_CLAVE = ["email", "dni", "dni_invoice", "phone", "store_phone", "Dni_Bank"]
 
