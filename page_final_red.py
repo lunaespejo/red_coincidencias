@@ -4,7 +4,7 @@ import sqlite3
 import base64
 import time
 import os  # Para manejar rutas dinámicas
-
+# import gdown
 
 # 📥 Verificar si existe la base de datos localmente, si no, descargarla
 DB_PATH = "./data/db_red/database.db"
@@ -13,8 +13,8 @@ DB_PATH = "./data/db_red/database.db"
 os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
 
 if not os.path.exists(DB_PATH):
-    with st.spinner("📥 Descargando base de datos desde Google Drive..."):
-        gdown.download(DOWNLOAD_URL, DB_PATH, quiet=False)
+    st.error("❌ La base de datos no se encuentra disponible. Por favor, súbela al repositorio en la ruta './data/db_red/database.db'")
+    st.stop()
 
 # Configuración inicial de la app
 st.set_page_config(page_title="ADMIN_PRO", layout="wide")
