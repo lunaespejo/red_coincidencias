@@ -4,12 +4,10 @@ import sqlite3
 import base64
 import time
 import os  # Para manejar rutas dinámicas
-# import gdown
+
 
 # 📥 Verificar si existe la base de datos localmente, si no, descargarla
 DB_PATH = "./data/db_red/database.db"
-# DRIVE_FILE_ID = "1DW15Nmf4Ox7sa2hcEq9ysTkCUfUZDtNP"
-# DOWNLOAD_URL = f"https://drive.google.com/uc?id={DRIVE_FILE_ID}&export=download"
 
 # Crear carpeta si no existe
 os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
