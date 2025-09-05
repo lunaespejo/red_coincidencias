@@ -8,7 +8,7 @@ import gdown
 
 # 📥 Verificar si existe la base de datos localmente, si no, descargarla
 DB_PATH = "./data/db_red/database.db"
-DRIVE_FILE_ID = "1DW15Nmf4Ox7sa2hcEq9ysTkCUfUZDtNP"
+DRIVE_FILE_ID = "1CtkzfxKR3bP43XpP4dgJETPpuUVTfUGo"
 DOWNLOAD_URL = f"https://drive.google.com/uc?id={DRIVE_FILE_ID}&export=download"
 
 # Crear carpeta si no existe
